@@ -1,51 +1,51 @@
-import java.util.*;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Map;
+import java.util.StringTokenizer;
 
 public class Hunter {
 
+    public int NumberOfWords(String sentence) {
 
-    public void Words() {
-
-        GetSentence getSentence = new GetSentence();
-        String sentence = getSentence.getValue();
-
-        String[] splitStr=sentence.split(" ");
         StringTokenizer words = new StringTokenizer(sentence);
         ArrayList<String> wordsInSentence = new ArrayList<String>();
-        Map<String,Integer>wordCount=new HashMap<>();
 
         while (words.hasMoreTokens()) {
+
             wordsInSentence.add(words.nextToken());
 
         }
-        System.out.println("Number of words in sentence: " + wordsInSentence.size());
 
-
-        for(String word:splitStr){
-            if(wordCount.containsKey(word)){
-                wordCount.put(word, wordCount.get(word)+1);
-            }
-            else {
-                wordCount.put(word,1);
-            }
-        }
-
-        for (Map.Entry<String,Integer> entry: wordCount.entrySet()){
-            System.out.println("Count of Word: "+entry.getKey()+" in sentence: " +entry.getValue()+" This words have: "+entry.getKey().length()+" charachter");
-        }
-
-
-
-
-
-
-
-
-
-
-
+        return wordsInSentence.size();
 
 
     }
+
+    public Map<String, Integer> FrequencyOfWord(String sentence) {
+
+        sentence = sentence.replaceAll("[.,?'!;_+%&/()=]", "");
+        sentence = sentence.toLowerCase();
+
+        String[] splitStr = sentence.split(" ");
+
+        Map<String, Integer> wordCount = new HashMap<>();
+
+        for (String word : splitStr) {
+            if (wordCount.containsKey(word)) {
+                wordCount.put(word, wordCount.get(word) + 1);
+            } else {
+                wordCount.put(word, 1);
+            }
+
+
+        }
+        return wordCount;
+
+
+    }
+
+
+
 
 }
 
