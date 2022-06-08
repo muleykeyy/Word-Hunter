@@ -1,3 +1,5 @@
+package org.example.app;
+
 import java.util.Map;
 import java.util.Set;
 
@@ -7,7 +9,7 @@ public class Main {
 
         Hunter hunter =new Hunter();
         Map<String,Integer>FullSentence =hunter.FrequencyOfWord("");
-        String a= "fuck you FUCK YOU! very, very. much!";
+        String a= "HiLal! müleyke. MÜLEYKE, yükSel hiLaL";
         System.out.println("Frequency of words: "+hunter.FrequencyOfWord(a));
         System.out.println("Number of words in sentence : "+hunter.NumberOfWords(a));
         Set<Map.Entry<String,Integer>> set=hunter.FrequencyOfWord(a).entrySet();
@@ -23,7 +25,7 @@ public class Main {
 
         }
 
-       /* Main mySentence=new Main();
+       /* org.example.app.Main mySentence=new org.example.app.Main();
         mySentence.GetSentence();
 
     }
